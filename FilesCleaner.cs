@@ -15,6 +15,7 @@ namespace RedundantFilesCleanerService
         private void DeleteFiles(object sender, ElapsedEventArgs e)
         { 
             //TODO: add configuration which allow the user to between deleting files including sub folders or only files
+            //TODO: ADD feature to allow user to chose diferent expiry date for each directory
             var exPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             var path = exPath + "\\directoryConfig.txt";
           
