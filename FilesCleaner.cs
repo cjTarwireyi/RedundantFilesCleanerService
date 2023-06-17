@@ -8,11 +8,13 @@ namespace RedundantFilesCleanerService
         private readonly System.Timers.Timer _timer;
         public FilesCleaner()
         {
+            //Change this to execute after 24 hours
             _timer = new System.Timers.Timer(1000) { AutoReset = true };
             _timer.Elapsed += DeleteFiles;
         }
         private void DeleteFiles(object sender, ElapsedEventArgs e)
-        {
+        { 
+            //TODO: add configuration which allow the user to between deleting files including sub folders or only files
             var exPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             var path = exPath + "\\directoryConfig.txt";
           
